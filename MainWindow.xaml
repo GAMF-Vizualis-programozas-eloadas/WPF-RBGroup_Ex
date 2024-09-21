@@ -1,0 +1,41 @@
+﻿<Window x:Class="RBGroup_Example.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:RBGroup_Example"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="180" Width="316">
+	<Grid>
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="150"/>
+			<ColumnDefinition Width="150"/>
+		</Grid.ColumnDefinitions>
+		<Grid.RowDefinitions>
+			<RowDefinition Height="Auto"/>
+			<RowDefinition/>
+		</Grid.RowDefinitions>
+		<GroupBox Grid.Column="0" Grid.Row="0" Header="StartColor">
+			<StackPanel x:Name="spStartColor"  Orientation="Vertical" ButtonBase.Click="spStartColor_Click">
+				<RadioButton x:Name="rbSRed" Margin="5,5,5,5" IsChecked="True" Content="Red"/>
+				<RadioButton x:Name="rbSGreen" Margin="5,5,5,5" Content="Green"/>
+				<RadioButton x:Name="rbSBlue" Margin="5,5,5,5" Content="Blue"/>
+			</StackPanel>
+		</GroupBox>
+		<GroupBox Grid.Row="0" Grid.Column="1" Header="EndColor">
+			<StackPanel x:Name="spEndn"  Orientation="Vertical" ButtonBase.Click="spEndColor_Click">
+				<RadioButton x:Name="rbERed" Margin="5,5,5,5" Content="Red"/>
+				<RadioButton x:Name="rbEGreen" Margin="5,5,5,5" Content="Green"/>
+				<RadioButton x:Name="rbEBlue" Margin="5,5,5,5" IsChecked="True" Content="Blue"/>
+			</StackPanel>
+		</GroupBox>
+		<Rectangle x:Name="rtSample" Height="60" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2">
+			<Rectangle.Fill>
+				<LinearGradientBrush  StartPoint="0.0,0.0" EndPoint="1.0,0.0" >
+					<GradientStop Color="Red" Offset="0"/>
+					<GradientStop Color="Blue" Offset="1"/>
+				</LinearGradientBrush>
+			</Rectangle.Fill>
+		</Rectangle>
+	</Grid>
+</Window>
